@@ -1,0 +1,1 @@
+module.exports = text => String(text).trim().replace(/\D/g, '')

@@ -1,0 +1,1 @@
+module.exports = paths => new RegExp(`^(${paths.join('|')})`, 'i')

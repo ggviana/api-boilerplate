@@ -1,0 +1,31 @@
+{
+  "name": "genesys-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "daemon": "forever start -c \"node --harmony_modules --harmony_default_parameters --harmony_destructuring_assignment --harmony_default_parameters\" -a --uid genesys-api app.js",
+    "dev": "nodemon --harmony_modules --harmony_default_parameters --harmony_destructuring_assignment --harmony_default_parameters app.js",
+    "prepare": "git pull && npm install",
+    "prod": "npm run prepare && npm run stop && sleep 0.1 && npm run daemon",
+    "start": "[ \"$NODE_ENV\" = \"\" ] || [ \"$NODE_ENV\" = \"development\" ] && npm run dev || npm run prod",
+    "stop": "forever stop genesys-api || true"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "compression": "^1.6.2",
+    "cors": "^2.7.1",
+    "express": "^4.14.0",
+    "forever": "^0.15.2",
+    "glob": "^7.0.4",
+    "jsonwebtoken": "^7.0.1",
+    "mssql": "^3.3.0",
+    "node-schedule": "^1.1.1"
+  },
+  "devDependencies": {
+    "nodemon": "^1.9.2"
+  }
+}

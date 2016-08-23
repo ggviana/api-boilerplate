@@ -1,0 +1,1 @@
+module.exports = (arr, item) => Boolean(~arr.indexOf(item))
